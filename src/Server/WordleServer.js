@@ -7,7 +7,8 @@ const cors = require('cors');
 app.use(express.json());
 app.use(cors()); //cors allows access to the server from different domains
 //url to the cloud provider with credentials
-const uri = "mongodb+srv://user:password123!@wordleprod.me6l3yl.mongodb.net/Wordle?retryWrites=true&w=majority";
+
+const uri = "";//INSERT API KEY
 
 // Connect to the server with mongoose
 let correctWord = "";

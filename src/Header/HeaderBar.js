@@ -22,7 +22,7 @@ class HeaderBar extends React.Component {
         return(
             <div style={{display:"flex"}} className="header container-fluid">
                 {/*The UserName component passes if it is currently being used to the HeaderBar*/}
-                <UserName onStatsOpen = {display => this.setState({displayStats: display})} onUserChange = {user => this.props.onUserChange(user)} onFocusChange={(focus) => {this.props.onFocusChange(focus); this.setState({focused: focus})}}/>
+                <UserName onStatsOpen = {display => this.setState({displayStats: true})} onUserChange = {user => this.props.onUserChange(user)} onFocusChange={(focus) => {this.props.onFocusChange(focus); this.setState({focused: focus})}}/>
                 <h1>Wordle</h1> {/*The title*/}
                 {this.state.displayStats ? <UserStats onExit = {display => this.setState({displayStats: display})} focus = {this.state.focused} lastWord = {this.props.lastWord} currUser={this.props.currUser} isGameFinished={this.props.isGameFinished} wonGame={this.props.wonGame} currentWordGuessCount={this.props.currentWordGuessCount}/> : <div></div>}
                 <AdministratorPanel correctWord={this.props.correctWord} onFocusChange={(focus) => {this.props.onFocusChange(focus); this.setState({focused: focus})}}/>
