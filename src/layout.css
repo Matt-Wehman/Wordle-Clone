@@ -1,0 +1,310 @@
+/* The styling for the parent page element */
+.Parent {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    background-color: rgba(18,18,18,1);
+    align-content: center;
+}
+/*=============================================HEADER=================================================*/
+
+/* The styling for the header, which contains the title and username input*/
+.header{
+    display: flex;
+    border-bottom: 1px solid rgba(60,60,60,1);
+    justify-content: flex-start;
+    padding-left: 5px;
+    max-height: 65px;
+    align-items: center;
+    flex-direction: row;
+}
+
+/* The styling for the Wordle title*/
+.header h1{
+    color: white;
+    flex: 0 1 auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+    font-family: Bahnschrift condensed;
+    font-size: 36px;
+    align-self: center;
+    padding-left:10px;
+    padding-top: 10px;
+}
+/*=============User Stats ============*/
+
+.userStats{
+    padding-left: 10px;
+    max-width: 300px;
+    float: left;
+    align-self: flex-start;
+    margin-top: 10px;
+    flex-shrink: 4;
+}
+
+
+#adminPanel{
+    display: none;
+}
+
+.modal{
+    display: block; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4);
+}
+.modal-header{
+    background-color: lightgray;
+    color: black;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    height: 20px;
+    width: 80%;
+    text-align: center;
+}
+
+.close{
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    right: 12%;
+}
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content {
+    background-color: black;
+    color: white;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.histogram {
+    width: auto;
+}
+
+.rowCount {
+    display: flex;
+}
+
+.meter {
+    background: transparent;
+    height: 20px;
+    width: 300px;
+    border-radius: 0px;
+}
+.countLabel {
+    padding-right: 15px;
+}
+
+.guessAmount {
+    padding-left: 15px;
+}
+
+#mostUsed{
+    text-align: center;
+}
+
+#mostUsed td, tr, th {
+    border: 1px solid white;
+    padding: 5px;
+}
+
+/*=========Admin Panel============*/
+/*TODO fix alignment issue with AdminPanel Button*/
+#adminPanelButton{
+    border: 1px solid lightgray;
+    height: 10%;
+    width: 100%;
+    position: relative;
+    margin-left: 2vh;
+    bottom: 3px;
+}
+
+/*=============Username input group=============*/
+
+/* The styling for the userNameGroup element, which contains the enter button and username text input.*/
+.inputGroupandStats{
+    max-width: 400px;
+    align-self: flex-start;
+    margin-top: 10px;
+    flex-shrink: 4;
+    display: flex;
+    flex-direction: row;
+}
+
+/* The styling for the User Stats button*/
+.userStatsBtn{
+    border: 1px solid lightgray;
+    height: 10%;
+    width: 40%;
+    position: relative;
+    margin-left: 2vh;
+}
+
+/* The styling for the username text input when it is being used*/
+.name:focus{
+    background-color: transparent;
+    outline:none;
+    border:1px solid green;
+    box-shadow: 0 0 10px green;
+    color: gray;
+}
+/* The styling for the username text input when it is not being used*/
+.name{
+    background-color: transparent;
+    color: gray;
+    border: 1px solid lightgray;
+}
+/* The styling for the enter button*/
+.enterBtn{
+    border: 1px solid lightgray;
+    border-radius: 10% 0 0 10%;
+}
+
+/*=============Game Length Dropdown=============*/
+
+.drop{
+    margin-left: auto;
+}
+
+.btn-primary{
+    background-color: transparent;
+    border-color: rgb(176,169,32);
+    color: gray;
+    --bs-btn-active-bg: transparent;
+    --bs-btn-active-border-color: rgb(176,169,32);
+}
+.dropdown-menu{
+    background-color: dimgrey;
+}
+.dropdown-item {
+    color: lightgray;
+    background-color: transparent;
+}
+
+.dropdown-item:hover {
+    background-color: darkgray;
+}
+
+.btn-primary:hover{
+    background-color: transparent;
+    border-color: rgb(176,169,32);
+    box-shadow: 2px 2px 2px 2px rgb(176,169,32);
+    color: gray;
+}
+
+
+/*===========================================BODY================================================*/
+
+/* The styling for the 'body' element, which contains the table and keyboard*/
+.body {
+    display: flex;
+    flex-direction: column-reverse;
+    flex-grow: 2;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 1;
+}
+/*=============Main Game Board=============*/
+
+/*This is the styling for the WordleTable component. This is the main table for the wordle game*/
+.wordle-main {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 5;
+    align-items: center;
+    justify-content: center;
+    padding-right: 25px;
+    flex-shrink: 1;
+}
+/*Styling for the individual blocks that hold a letter in the main table.*/
+.block{
+    display: flex;
+    flex-shrink: 1;
+    border: 2px solid rgba(60,60,60,1);
+    width: 65px;
+    height: 65px;
+    margin: 2px 2px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding-top: 12px;
+}
+/* Styling for the letters within the main game blocks */
+.block p{
+    color:white;
+    font-family: sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+}
+/*The width of each column within the main game board.*/
+.columnWidth{
+    max-width: 70px;
+}
+
+/*=============Keyboard=============*/
+
+/*Styling for the keyboard container. This holds the WordleKeyboard Component*/
+.wordleKeyboardContainer{
+    flex-grow:1;
+    order: -1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-shrink: 1;
+}
+/*Styling for the keyboard. This element holds all of the keys*/
+.board{
+    max-width: 550px;
+    max-height: 600px;
+}
+/*Styling for the keys of the keyboard*/
+.wordleKey{
+    width: 45px;
+    height: 60px;
+    border-radius: 10%;
+    color: white;
+    text-align: center;
+    margin: 3px;
+    padding-top: 13px;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+    flex-shrink: 1;
+}
+/*The column width for each key on the board*/
+.columnKeyWidth{
+    max-width: 50px;
+}
+
+#invalidWord {
+    width: 250px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
